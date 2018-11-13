@@ -1,13 +1,26 @@
-# 3.Сформировать из введенного числа обратное по порядку входящих в него цифр и вывести на экран.
-# Например, если введено число 3486, то надо вывести число 6843.back_num = 0
+import random
 
-print('Введите число:')
-num = int(input('num = '))
+LENG = 10
 
-while num // 10 != 0:
-    rem_div = num % 10
-    back_num = back_num * 10 + rem_div
-    num = num // 10
+lst = [random.randint(0, 100) for i in range(LENG)]
+min_ = lst[0]
+max_ = lst[0]
+pos_min = 0
+pos_max = 0
 
-back_num = back_num * 10 + num
-print(f'Обратное по порядку входящих в него цифр: {back_num}')
+for i in range(len(lst)):
+    if lst[i] <= min_:
+        min_ = lst[i]
+        pos_min = i
+    elif lst[i] >= max_:
+        max_ = lst[i]
+        pos_max = i
+
+print(lst)
+print(max_, pos_max)
+print(min_, pos_min)
+
+lst[pos_max] = min_
+lst[pos_min] = max_
+
+print(lst)

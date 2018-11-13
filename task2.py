@@ -1,21 +1,13 @@
-# 2.Посчитать четные и нечетные цифры введенного натурального числа. Например,
-# если введено число 34560, то у него 3 четные цифры (4, 6 и 0) и 2 нечетные (3 и 5).
+import random
 
-odd, eve = 0, 0
-print('Введите число:')
-num = int(input('num = '))
+LENG = 10
 
-while num // 10 != 0:
-    rem_div = num % 10
-    if rem_div % 2 == 0:
-        eve = eve + 1
-    else:
-        odd = odd + 1
-    num = num // 10
+lst1 = [random.randint(0, 100) for i in range(LENG)]
+lst2 = []
 
-rem_div = num % 10
-if rem_div % 2 == 0:
-    eve = eve + 1
-else:
-    odd = odd + 1
-print(f'В введенном вами числе {eve} четных цифр и {odd} нечетных цифр')
+for i in range(len(lst1)):
+    if lst1[i] % 2 == 0:
+        lst2.append(i)
+
+print(lst1)
+print(lst2)

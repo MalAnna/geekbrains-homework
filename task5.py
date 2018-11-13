@@ -1,20 +1,16 @@
-print('Введите две латинские буквы в одном регистре:')
-let1 = ord(input('let1 = '))
-let2 = ord(input('let2 = '))
+import random
 
-if 65 <= let1 <= 90 and 65 <= let2 <= 90:
-    pos1 = let1 - 64
-    pos2 = let2 - 64
-    count = abs(pos1 - pos2) - 1
-    print(f'Позиция первой буквы: {pos1}, позиция второй буквы: {pos2}, между ними {count} букв(а)')
-elif 97 <= let1 <= 122 and 97 <= let2 <= 122:
-    pos1 = let1 - 96
-    pos2 = let2 - 96
-    count = abs(pos1 - pos2) - 1
-    print(f'Позиция первой буквы: {pos1}, позиция второй буквы: {pos2}, между ними {count} букв(а)')
-else:
-    print('Символы не соответствует буквам латинского алфавита')
+LENG = 10
 
+lst = [random.randint(-10, 10) for i in range(LENG)]
+pos = 0
+max_min = -10
 
+for i in range(len(lst)):
+    if max_min <= lst[i] < 0:
+        if lst[i] > max_min:
+            max_min = lst[i]
+            pos = i
 
-
+print(lst)
+print(max_min, pos)
